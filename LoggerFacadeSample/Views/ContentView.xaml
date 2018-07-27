@@ -1,0 +1,9 @@
+﻿<UserControl x:Class="LoggerFacadeSample.Views.ContentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Button Content="実行" Command="{Binding DoCommand}" />
+    </Grid>
+</UserControl>
