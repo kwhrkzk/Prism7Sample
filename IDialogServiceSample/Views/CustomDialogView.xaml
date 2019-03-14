@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="IDialogServiceSample.Views.CustomDialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IDialogServiceSample.Views"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Height="{Binding Height.Value}" Width="{Binding Width.Value}"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="200">
+
+    <DockPanel>
+        <TextBox DockPanel.Dock="Top" Margin="5" Text="{Binding Input.Value}" />
+        <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Margin="5" Content="Recursion" Command="{Binding RecursionCommand}" />
+            <Button Margin="5" Content="OK" Command="{Binding OKCommand}" />
+        </StackPanel>
+        <ContentControl prism:RegionManager.RegionName="CustomDialogRegion" prism:RegionManager.RegionManager="{Binding CustomDialogRegionManager.Value}" />
+    </DockPanel>
+</UserControl>
