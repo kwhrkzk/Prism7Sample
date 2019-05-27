@@ -1,4 +1,5 @@
 ﻿using IDialogServiceSample.Views;
+using Prism.Navigation;
 using Prism.Regions;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace IDialogServiceSample.ViewModels
 {
-    public class SubbViewModel : IConfirmNavigationRequest, IRegionMemberLifetime, IDisposable, INotifyPropertyChanged
+    public class SubbViewModel : IConfirmNavigationRequest, IRegionMemberLifetime, IDisposable, INotifyPropertyChanged, IDestructible
     {
 #pragma warning disable 0067
         public event PropertyChangedEventHandler PropertyChanged;
@@ -59,5 +60,7 @@ namespace IDialogServiceSample.ViewModels
         }
 
         public void OnNavigatedFrom(NavigationContext navigationContext) => Dispose();
+
+        public void Destroy() => Dispose();
     }
 }

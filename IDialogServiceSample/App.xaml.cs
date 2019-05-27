@@ -21,8 +21,7 @@ namespace IDialogServiceSample
             containerRegistry.RegisterForNavigation<SubaView>();
             containerRegistry.RegisterForNavigation<SubbView>();
 
-            //containerRegistry.RegisterDialog<CustomDialogView>(nameof(CustomDialogView));
-            containerRegistry.RegisterDialog<CustomDialogView, CustomDialogViewModel>();
+            containerRegistry.RegisterDialog<CustomDialogView>(nameof(CustomDialogView));
 
             containerRegistry.RegisterDialogWindow<CustomDialogWindow>();
         }

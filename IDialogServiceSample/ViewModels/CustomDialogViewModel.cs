@@ -115,6 +115,13 @@ namespace IDialogServiceSample.ViewModels
         }
 
         public void OnNavigatedFrom(NavigationContext navigationContext) => Dispose();
-        public void OnDialogClosed() => Dispose();
-    }
+
+        public void OnDialogClosed()
+        {
+            foreach (IRegion r in CustomDialogRegionManager.Value.Regions)
+                r.RemoveAll();
+
+            Dispose();
+        }
+   }
 }
